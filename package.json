@@ -1,15 +1,16 @@
 {
   "name": "electronic-conway",
   "author": "J. Nolan Hager <jeffrey.hager.dev@gmail.com>",
-  "license": "MIT",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron main.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.4.8"
+  },
   "devDependencies": {
-    "electron-prebuilt": "^0.36.2"
-  },
+    "electron-prebuilt": "^0.36.0"
+  }
 }

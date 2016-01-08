@@ -1,0 +1,7 @@
+<table class="board">
+  <tr ng-repeat="row in data">
+    <td ng-repeat="cell in row">
+      <span ng-class="{alive: cell==1, dead: cell==0}"> {{cell}}</span>
+    </td>
+  </tr>
+</table>

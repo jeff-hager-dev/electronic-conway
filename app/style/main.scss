@@ -1,0 +1,13 @@
+
+@import "colors";
+
+.board {
+  span {
+    .alive {
+      background: $alive-color;
+    }
+    .dead {
+      background: $alive-color;
+    }
+  }
+}
