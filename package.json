@@ -11,6 +11,12 @@
     "angular": "^1.4.8"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.36.0"
+    "electron-prebuilt": "^0.36.0",
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.1.1",
+    "run-sequence": "^1.1.5"
   }
 }
