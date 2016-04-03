@@ -1,13 +1,7 @@
 
-@import "colors";
+@import "cell-style";
 
-.board {
-  span {
-    .alive {
-      background: $alive-color;
-    }
-    .dead {
-      background: $dead-color;
-    }
-  }
+table.board-display{
 }
+
+

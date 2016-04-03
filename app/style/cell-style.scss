@@ -1,0 +1,21 @@
+
+$alive-color: green;
+$dead-color: white;
+$cell-size: 15px;
+
+td.cell{
+  height: $cell-size;
+  width: $cell-size;
+  &>div {
+    &.alive {
+      height: $cell-size;
+      width: $cell-size;
+      background: $alive-color;
+    }
+    &.dead {
+      height: $cell-size;
+      width: $cell-size;
+      background: $dead-color;
+    }
+  }
+}
