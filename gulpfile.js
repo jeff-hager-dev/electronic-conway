@@ -3,15 +3,23 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var copy = require('gulp-copy');
+
+var bases = {
+  'app': './app',
+  'dist': './dist'
+};
+
 
 gulp.task('sass', function () {
-  return gulp.src('./app/style/main.scss')
+  return gulp.src(bases.app+'/style/main.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest(bases.app+'/css'));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('./app/style/**/*.scss', ['sass']);
+gulp.task('copy:index', function(){
+  return gulp
+    .src(bases.app+'/index.html')
+    .pipe(gulp.dest(bases.dist));
 });
-
 
