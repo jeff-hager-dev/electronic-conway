@@ -5,7 +5,7 @@
   "use strict";
 
 
-  var conwayCell = function(){};
-  conwayCell.prototype.isAlive = false;
-  exports.conwayCell = conwayCell;
+  var Cell = function(){};
+  Cell.prototype.isAlive = false;
+  exports.Cell = Cell;
 })(window);

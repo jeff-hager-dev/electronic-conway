@@ -11,6 +11,7 @@
     "angular": "^1.4.8"
   },
   "devDependencies": {
+    "browserify": "^13.0.0",
     "electron-prebuilt": "^0.36.0",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^1.8.0",
@@ -19,6 +20,7 @@
     "gulp-copy": "0.0.2",
     "gulp-sass": "^2.1.1",
     "node-sass": "^3.4.2",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

@@ -5,6 +5,9 @@ var sass = require('gulp-sass');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
+var templateCache = require('gulp-angular-templatecache');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
 
 
 var paths = {
@@ -12,10 +15,16 @@ var paths = {
   "templates": ["./app/**/*template.html"],
   "sassFiles": "./app/style/main.scss",
   "indexHtml": "./app/index.html",
-  "appScripts": "./app/**/*.js"
+  "appScripts": ["./app/display/*.js", "./app/cell.js", "./app/board.js", "./app/main.js" ]// Order matters here
 };
 
-var templateCache = require('gulp-angular-templatecache');
+gulp.task('browserify', function() {
+  // Grabs the app.js file
+  return browserify('./libs.js')
+    .bundle()
+    .pipe(source('libs.js'))
+    .pipe(gulp.dest(paths.output));
+});
 
 
 gulp.task('scripts', function() {
@@ -26,7 +35,7 @@ gulp.task('scripts', function() {
 
 gulp.task('template', function () {
   return gulp.src(paths.templates)
-    .pipe(templateCache())
+    .pipe(templateCache('templates.js', {module: "conway"}))
     .pipe(gulp.dest(paths.output));
 });
 
@@ -50,7 +59,7 @@ gulp.task('copy:index', function () {
 gulp.task('build', function (callback) {
   runSequence(
     'clean:dist',
-    ['scripts', 'sass', 'template', 'copy:index']
+    ['scripts', 'browserify', 'sass', 'template', 'copy:index']
     , function (error) {
       if (error) {
         console.log(error.message);
