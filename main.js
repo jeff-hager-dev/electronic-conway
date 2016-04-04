@@ -3,13 +3,18 @@
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const cfg = require('./config');
 
 let mainWindow;
 
 function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600});
   mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
-  mainWindow.webContents.openDevTools();
+
+  if(cfg.openDevTools) {
+    mainWindow.webContents.openDevTools();
+  }
+
   mainWindow.on('closed', function() {
     mainWindow = null;
   });

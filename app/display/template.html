@@ -1,4 +1,4 @@
-<table class="board-display"  cellspacing="0" cellpadding="0" border="1">
+<table class="board-display">
   <tr ng-repeat="row in board.cells">
     <td class="cell" ng-repeat="cell in row" >
       <div ng-class="{true: 'alive', false: 'dead'}[cell.isAlive()]" ng-click="cell.change()"></div>

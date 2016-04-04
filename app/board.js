@@ -18,6 +18,25 @@
   };
 
   board.prototype.update = function(){
+    _.each(this.cells, function(cell){
+      
+    });
+  };
+
+  board.prototype._countLiveNeighbours = function(x, y){
+    var _isLiving = function(x, y){};
+    var liveCnt = 0;
+
+    if (_isLiving(x-1, y-1)) liveCnt++;
+    if (_isLiving(x, y-1)) liveCnt++;
+    if (_isLiving(x+1, y-1)) liveCnt++;
+    if (_isLiving(x-1, y)) liveCnt++;
+    if (_isLiving(x+1, y)) liveCnt++;
+    if (_isLiving(x-1, y+1)) liveCnt++;
+    if (_isLiving(x, y+1)) liveCnt++;
+    if (_isLiving(x+1, y+1)) liveCnt++;
+
+    return liveCnt;
   };
 
 
