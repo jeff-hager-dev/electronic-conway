@@ -3,8 +3,9 @@
   'use strict';
 
   var board = function(){
+    this.generation = 0;
     this.cells = [];
-    this.size = {'x': 20, 'y': 20};
+    this.size = {'x': 30, 'y': 50};
     this.init();
   };
 
@@ -18,9 +19,11 @@
   };
 
   board.prototype.update = function(){
-    _.each(this.cells, function(cell){
-      
-    });
+    for (var x = 0; x < this.size.x; x++) {
+      for(var y = 0; y < this.size.y; y++) {
+        var livingCount = this._countLiveNeighbours(x, y);
+      }
+    }
   };
 
   board.prototype._countLiveNeighbours = function(x, y){
@@ -37,6 +40,18 @@
     if (_isLiving(x+1, y+1)) liveCnt++;
 
     return liveCnt;
+  };
+
+  board.prototype.start = function(){
+    console.log('start');
+  };
+
+  board.prototype.stop = function(){
+    console.log('stop');
+  };
+
+  board.prototype.restart = function(){
+    console.log('restart');
   };
 
 
