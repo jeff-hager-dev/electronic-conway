@@ -1,7 +1,14 @@
-<table class="board-display">
-  <tr ng-repeat="row in board.cells">
-    <td class="cell" ng-repeat="cell in row" >
-      <div ng-class="{true: 'alive', false: 'dead'}[cell.isAlive()]" ng-click="cell.change()"></div>
-    </td>
-  </tr>
-</table>
+<div>
+  <table class="board-display">
+    <tr ng-repeat="row in board.cells">
+      <td class="cell" ng-repeat="cell in row">
+        <div ng-class="{true: 'alive', false: 'dead'}[cell.isAlive()]" ng-click="cell.change()"></div>
+      </td>
+    </tr>
+  </table>
+  <div class="life-controls">
+    <span><i class="glyphicon glyphicon-refresh"></i></span>
+    <span><i class="glyphicon glyphicon-play"></i></span>
+    <span><i class="glyphicon glyphicon-stop"></i></span>
+  </div>
+</div>

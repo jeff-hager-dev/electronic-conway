@@ -15,7 +15,8 @@ var paths = {
   "templates": ["./app/**/*template.html"],
   "sassFiles": "./app/style/main.scss",
   "indexHtml": "./app/index.html",
-  "appScripts": ["./app/display/*.js", "./app/cell.js", "./app/board.js", "./app/main.js" ]// Order matters here
+  "appScripts": ["./app/display/*.js", "./app/cell.js", "./app/board.js", "./app/main.js" ],// Order matters here
+  "bootStrapDir": './node_modules/bootstrap/dist/**/*'
 };
 
 gulp.task('browserify', function() {
@@ -45,6 +46,13 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(paths.output + '/css'));
 });
 
+gulp.task('copy:bootstrap', function(){
+
+  return gulp
+    .src(paths.bootStrapDir)
+    .pipe(gulp.dest(paths.output));
+});
+
 gulp.task('clean:dist', function () {
   return gulp.src(paths.output, {read: false})
     .pipe(clean({force: true}));
@@ -59,7 +67,7 @@ gulp.task('copy:index', function () {
 gulp.task('build', function (callback) {
   runSequence(
     'clean:dist',
-    ['scripts', 'browserify', 'sass', 'template', 'copy:index']
+    ['scripts', 'browserify', 'sass', 'template', 'copy:index', 'copy:bootstrap']
     , function (error) {
       if (error) {
         console.log(error.message);

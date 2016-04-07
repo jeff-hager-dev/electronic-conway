@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World!</title>
-  <link type="text/css" rel="stylesheet" href="./css/main.css" />
+  <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="./css/main.css"/>
 </head>
 <body>
-<h1 id="test">Conway's Game of Life</h1>
 <div ng-app="conway">
-  <board-display></board-display>
+  <div class="row">
+    <div class="col-sm-8 col-md-offset-3">
+      <h1 id="test">Conway's Game of Life</h1>
+      <board-display></board-display>
+    </div>
+  </div>
 </div>
 
 </div>
+
 <script type="application/javascript" src="./libs.js"></script>
 <script type="application/javascript" src="./app.js"></script>
 <script type="application/javascript" src="./templates.js"></script>
