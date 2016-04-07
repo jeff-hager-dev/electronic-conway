@@ -6,6 +6,8 @@
     this.generation = 0;
     this.cells = [];
     this.size = {'x': 30, 'y': 50};
+    this.updateInterval = 400;
+    this.nIntervId = null;
     this.init();
   };
 
@@ -18,7 +20,7 @@
     }
   };
 
-  board.prototype.update = function(){
+  board.prototype.updateBoard = function(){
     for (var x = 0; x < this.size.x; x++) {
       for(var y = 0; y < this.size.y; y++) {
         var livingCount = this._countLiveNeighbours(x, y);
@@ -42,16 +44,17 @@
     return liveCnt;
   };
 
-  board.prototype.start = function(){
-    console.log('start');
+  board.prototype.startGame = function() {
+    this.nIntervId = setInterval(this.updateBoard, this.updateInterval);
   };
 
-  board.prototype.stop = function(){
-    console.log('stop');
+  board.prototype.stopGame = function(){
+    clearInterval(this.nIntervId);
   };
 
-  board.prototype.restart = function(){
-    console.log('restart');
+  board.prototype.restartGame = function(){
+    this.stopGame();
+    this.init();
   };
 
 
