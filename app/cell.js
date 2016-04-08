@@ -13,13 +13,16 @@
   };
 
   Cell.prototype.born = function(){
+    console.log('cell born');
     this._living = true;
   };
 
   Cell.prototype.kill = function(){
+    console.log('cell died');
     this._living = false;
   };
   Cell.prototype.change = function(){
+
     this._living = !this._living;
   };
   exports.Cell = Cell;
