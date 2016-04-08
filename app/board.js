@@ -27,10 +27,10 @@
     for (var x = 0; x < this.size.x; x++) {
       for (var y = 0; y < this.size.y; y++) {
         var livingCount = this._countLiveNeighbours(x, y);
-        if ((livingCount < 0 || livingCount > 3) && this.cells[x][y].isAlive()) {
+        if (this.cells[x][y].isAlive() && (livingCount <= 1 || livingCount > 3)) {
           deadCells.push(this.cells[x][y]);
         }
-        if (livingCount === 3 && !this.cells[x][y].isAlive()) {
+        else if (!this.cells[x][y].isAlive() && livingCount === 3) {
           livingCells.push(this.cells[x][y]);
         }
       }
