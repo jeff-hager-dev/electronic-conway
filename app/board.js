@@ -2,12 +2,13 @@
   //Board Definition
   'use strict';
 
-  var board = function () {
+  var board = function ($interval) {
     this.generation = 0;
     this.cells = [];
     this.size = {'x': 30, 'y': 50};
     this.updateInterval = 500;
     this.nIntervId = null;
+    this.$interval = $interval;
     this.init();
   };
 
@@ -16,7 +17,8 @@
     for (var x = 0; x < this.size.x; x++) {
       this.cells[x] = [];
       for (var y = 0; y < this.size.y; y++) {
-        this.cells[x][y] = new Cell();
+        var newCell = new Cell();
+        this.cells[x][y] = newCell;
       }
     }
   };
@@ -67,13 +69,14 @@
 
   board.prototype.startGame = function () {
     var boardScope = this;
-    this.nIntervId = setInterval(function () {
+    this.nIntervId = boardScope.$interval(function () {
       boardScope.updateBoard()
     }, this.updateInterval);
   };
 
   board.prototype.stopGame = function () {
-    clearInterval(this.nIntervId);
+    this.$interval.cancel(this.nIntervId);
+    this.nIntervId = undefined;
   };
 
   board.prototype.restartGame = function () {
@@ -82,7 +85,7 @@
   };
 
 
-  board.$inject = [];
+  board.$inject = ['$interval'];
 
   exports.board = board;
 

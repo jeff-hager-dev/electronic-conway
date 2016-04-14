@@ -25,5 +25,14 @@
 
     this._living = !this._living;
   };
+
+  Cell.prototype.setAction = function(action){
+    this._action = action;
+  };
+
+  Cell.prototype.triggerAction = function(){
+    this._action();
+  };
+
   exports.Cell = Cell;
 })(window);
