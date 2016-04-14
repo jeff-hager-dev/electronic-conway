@@ -1,5 +1,6 @@
 <div>
   <div class="board-container">
+    <h2>Current Generation: {{board.generation}}</h2>
     <table class="board-display">
       <tr ng-repeat="row in board.cells">
         <td class="cell" ng-repeat="cell in row">

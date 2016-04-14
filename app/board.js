@@ -5,17 +5,18 @@ var config = require('../config');
   'use strict';
 
   var board = function ($interval) {
-    this.generation = 0;
-    this.cells = [];
-    this.size = config.board.size;
-    this.updateInterval = 500;
-    this.nIntervId = null;
     this.$interval = $interval;
     this.init();
   };
 
   board.prototype.init = function () {
-    console.log('init');
+    
+    this.generation = 0;
+    this.cells = [];
+    this.size = config.board.size;
+    this.updateInterval = 500;
+    this.nIntervId = null;
+
     for (var x = 0; x < this.size.x; x++) {
       this.cells[x] = [];
       for (var y = 0; y < this.size.y; y++) {
