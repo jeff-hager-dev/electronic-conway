@@ -8,15 +8,27 @@
 </head>
 <body>
 <div ng-app="conway">
-  <div class="row">
-    <div class="col-sm-8 col-md-offset-3">
-      <h1 id="test">Conway's Game of Life</h1>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          Conway's Game of Life
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
       <board-display></board-display>
     </div>
+
   </div>
 </div>
 
-</div>
 
 <script type="application/javascript" src="./libs.js"></script>
 <script type="application/javascript" src="./app.js"></script>

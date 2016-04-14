@@ -1,3 +1,5 @@
+var config = require('../config');
+
 (function (exports) {
   //Board Definition
   'use strict';
@@ -5,7 +7,7 @@
   var board = function ($interval) {
     this.generation = 0;
     this.cells = [];
-    this.size = {'x': 30, 'y': 50};
+    this.size = config.board.size;
     this.updateInterval = 500;
     this.nIntervId = null;
     this.$interval = $interval;
@@ -70,7 +72,8 @@
   board.prototype.startGame = function () {
     var boardScope = this;
     this.nIntervId = boardScope.$interval(function () {
-      boardScope.updateBoard()
+      boardScope.updateBoard();
+      boardScope.generation += 1;
     }, this.updateInterval);
   };
 

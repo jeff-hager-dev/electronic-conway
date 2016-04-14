@@ -8,7 +8,7 @@ const cfg = require('./config');
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new BrowserWindow(cfg.window);
   mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
 
   if(cfg.openDevTools) {

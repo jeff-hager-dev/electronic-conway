@@ -2,9 +2,9 @@
 
 ## Why
 
-Because I wanted to
+Because I wanted to...
 
-Yes, I know I could have done this with Canvas or other web techs but I wanted to see if I could do it with Angular.
+Yes, I know I could have done this with Canvas or other web techs but I wanted to see if I could do it with Angular. I also know that this isn't the most "Angular"/"Electron" way but again this was a pet project for me to have fun with.
 
 ## Rules
 
