@@ -21,7 +21,7 @@ Here are the rules as discussed on the [Wikipedia Page about Conway's Game of Li
 
 ## Developing
 
-TODO
+To run in development mode(dev tools and some additional logging) use ```npm run dev```
 
 
 [wiki_conway]: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life

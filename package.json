@@ -5,7 +5,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "gulp build && electron main.js"
+    "start": "gulp build && electron main.js",
+    "dev": "gulp build && NODE_ENV=dev electron main.js"
   },
   "dependencies": {
     "angular": "^1.4.8",
