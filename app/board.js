@@ -1,4 +1,4 @@
-var config = require('../config');
+var cfg = require('../config');
 
 (function (exports) {
   //Board Definition
@@ -10,11 +10,11 @@ var config = require('../config');
   };
 
   board.prototype.init = function () {
-    
+
     this.generation = 0;
     this.cells = [];
-    this.size = config.board.size;
-    this.updateInterval = 500;
+    this.size = cfg.board.size;
+    this.updateInterval = cfg.updateInterval;
     this.nIntervId = null;
 
     for (var x = 0; x < this.size.x; x++) {
