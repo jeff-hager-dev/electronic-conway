@@ -3,8 +3,7 @@
 (function(exports){
   // Cell definition
   "use strict";
-
-
+  
   var Cell = function(){
     this._living = false;
   };
@@ -27,6 +26,8 @@
   };
 
   Cell.prototype.setAction = function(action){
+    //NOTE(JNHager): Was thinking of using this as a way to
+    // add some more functionality to the cells. Like getting sick
     this._action = action;
   };
 
