@@ -1,7 +1,6 @@
 var cfg = require('../config');
 
 (function (exports) {
-  //Board Definition
   'use strict';
 
   var board = function ($interval) {

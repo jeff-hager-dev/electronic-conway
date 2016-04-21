@@ -1,9 +1,8 @@
 
 
 (function(exports){
-  // Cell definition
   "use strict";
-  
+
   var Cell = function(){
     this._living = false;
   };
@@ -17,7 +16,6 @@
   };
 
   Cell.prototype.kill = function(){
-    console.log('cell died');
     this._living = false;
   };
   Cell.prototype.change = function(){
